@@ -1,1 +1,1 @@
-export const docsRoute = '/docs';
+export const docsRoute = '/';
