@@ -40,6 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .source
-editor.bat
-push.bat
-setup.bat
+/scripts
+*.bat
