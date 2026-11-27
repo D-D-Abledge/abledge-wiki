@@ -47,15 +47,18 @@ export function InfoboxRenderer({ props, children }: ComponentRenderProps) {
   );
 }
 export function Infobox({ title, children,float }: InfoboxProps) {
-    let margin = float == "right"? "ml-6": "mr-6";
+  const positionClasses =
+    float === "right"
+      ? "float-right clear-right ml-6"
+      : "float-left clear-left mr-6";
   return (
-    <div className={"float-" + float +" clear-" + float +" " + margin + " mb-4 w-72 rounded-xl border border-fd-border bg-fd-card p-4 text-fd-card-foreground shadow-sm text-sm"}>
+    <div className={`${positionClasses} mb-4 w-72 rounded-xl border border-fd-border bg-fd-card p-4 text-sm text-fd-card-foreground shadow-sm *:my-0`}>
       {title && (
         <h3 className="font-semibold text-base mb-3 pb-2 border-b border-fd-border flex flex-col text-center items-center">
           {title}
         </h3>
       )}
-      <div className="flex flex-col items-center text-center gap-2 w-full">
+      <div className="flex w-full flex-col items-stretch text-center gap-2 [&>div]:w-full [&_table]:w-full *:my-0">
         {children}
       </div>
     </div>
